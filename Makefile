@@ -1,9 +1,10 @@
 .PHONY: generate data setup
 
 install: setup data generate
+	go get ./...
 	go install
 
-release: setup
+release: setup-release
 	git tag -a $(VERSION) -m "$(VERSION)"
 	git push origin $(VERSION)
 	goreleaser --rm-dist --parallelism 1 || (git tag -d $(VERSION) && git push --delete origin $(VERSION))
@@ -26,8 +27,10 @@ generate:
 	cd data/windows && embedfiles -out ../../data_windows.go .
 
 setup:
-	go get github.com/goreleaser/goreleaser
 	go get 4d63.com/embedfiles
+
+setup-release:
+	go get github.com/goreleaser/goreleaser
 	gem install --no-ri --no-rdoc fpm
 	sudo apt-get install -y rpm
 	sudo apt-get install -y bsdtar
