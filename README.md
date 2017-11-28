@@ -14,7 +14,7 @@ To fulfill use cases not fulfilled by existing [tldr clients](https://github.com
 
 ## Install
 
-### Binary (Linux, macOS, Windows, Linux with DEB/RPM/Pacman)
+### Binary (Linux binary, deb, rpm, pacman; macOS; Windows)
 
 Download and install the binary from the [releases](https://github.com/leighmcculloch/tldr/releases) page.
 
