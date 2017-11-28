@@ -1,0 +1,50 @@
+builds:
+  - binary: tldr
+    goos:
+      - linux
+      - darwin
+      - windows
+      - solaris
+    goarch:
+      - amd64
+      - 386
+
+archive:
+  wrap_in_directory: true
+  format: tar.gz
+  format_overrides:
+    - goos: windows
+      format: zip
+  replacements:
+    amd64: x64
+    386: x86
+    darwin: macos
+  files:
+    - LICENSE
+    - LICENSE-tldr-pages
+
+fpm:
+  vendor: Leigh McCulloch
+  homepage: https://4d63.com/tldr
+  maintainer: Leigh McCulloch <leigh@mcchouse.com>
+  description: Simplified and community-driven man pages (tldr-pages).
+  license: MIT
+  formats:
+    - deb
+    - rpm
+    - pacman
+
+brew:
+  github:
+    owner: leighmcculloch
+    name: homebrew-tldr
+  commit_author:
+    name: Leigh McCulloch
+    email: leigh@mcchouse.com
+  folder: Formula
+  homepage: "https://4d63.com/tldr"
+  description: Simplified and community-driven man pages (tldr-pages).
+  test: |
+    system "#{bin}/tldr -version"
+  install: |
+    bin.install "tldr"
