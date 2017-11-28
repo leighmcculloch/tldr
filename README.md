@@ -21,7 +21,7 @@ Download and install the binary from the [releases](https://github.com/leighmccu
 ### Brew (macOS)
 
 ```
-brew install leighmcculloch/tldr/tldr
+brew install 4d63/tldr/tldr
 ```
 
 ### Source
