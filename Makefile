@@ -31,6 +31,3 @@ setup:
 
 setup-release:
 	go get github.com/goreleaser/goreleaser
-	gem install --no-ri --no-rdoc fpm
-	sudo apt-get install -y rpm
-	sudo apt-get install -y bsdtar

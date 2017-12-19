@@ -23,17 +23,6 @@ archive:
     - LICENSE
     - LICENSE-tldr-pages
 
-fpm:
-  vendor: Leigh McCulloch
-  homepage: https://4d63.com/tldr
-  maintainer: Leigh McCulloch <leigh@mcchouse.com>
-  description: Simplified and community-driven man pages (tldr-pages).
-  license: MIT
-  formats:
-    - deb
-    - rpm
-    - pacman
-
 brew:
   github:
     owner: leighmcculloch
