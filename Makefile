@@ -9,6 +9,15 @@ release: setup-release
 	git push origin $(VERSION)
 	goreleaser --rm-dist --parallelism 1 || (git tag -d $(VERSION) && git push --delete origin $(VERSION))
 
+autorelease: install
+	git add . && git diff --cached --exit-code || \
+		( \
+			echo 'New data files found, updating...' \
+			&& git commit -m "Update data files" \
+			&& git push origin master \
+			&& $(MAKE) release VERSION=$$(date +%s)\
+		)
+
 data:
 	rm -fr data
 	mkdir data
