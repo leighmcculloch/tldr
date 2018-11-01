@@ -33,7 +33,7 @@ func main() {
 	}
 	if len(args) > 1 {
 		fmt.Fprintf(os.Stderr, "A single command must be specified.\n")
-		return
+		os.Exit(1)
 	}
 
 	command := strings.ToLower(args[0])
@@ -41,7 +41,7 @@ func main() {
 	raw, ok := files[command]
 	if !ok {
 		fmt.Fprintf(os.Stderr, "Command %s is not known.\n", command)
-		return
+		os.Exit(1)
 	}
 	text := string(raw)
 
