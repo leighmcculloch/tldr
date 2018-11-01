@@ -2,10 +2,10 @@
 
 > Creates a directory.
 
-- Create a directory in current folder or given path:
+- Create a directory:
 
-`mkdir {{directory}}`
+`mkdir {{directory_name}}`
 
-- Create directories recursively (useful for creating nested dirs):
+- Recursively create a nested directory tree:
 
-`mkdir -p {{path/to/directory}}`
+`mkdir {{path/to/sub_directory_name}}`

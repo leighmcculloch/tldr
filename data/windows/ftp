@@ -1,18 +1,22 @@
 # ftp
 
-> Tools to interact with a server via File Transfer Protocol.
+> Interactively transfer files between a local and remote FTP server.
 
-- Connect to an FTP server:
+- Connect to a remote FTP server interactively:
 
-`ftp {{ftp.example.com}}`
+`ftp {{host}}`
 
-- Switch to binary transfer mode (graphics, compressed files, etc):
+- Log in as an anonymous user:
 
-`binary`
+`ftp -A {{host}}`
 
-- Transfer multiple files without prompting for confirmation on every file:
+- Disable automatic login upon initial connection:
 
-`prompt off`
+`ftp -n {{host}}`
+
+- Run a file containing a list of FTP commands:
+
+`ftp -s:{{path/to/file}} {{host}}`
 
 - Download multiple files (glob expression):
 
@@ -26,6 +30,6 @@
 
 `mdelete {{*.txt}}`
 
-- Rename a file on the remote server:
+- Display detailed help:
 
-`rename {{original_filename}} {{new_filename}}`
+`ftp --help`

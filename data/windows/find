@@ -1,35 +1,19 @@
 # find
 
-> Find files under the given directory tree, recursively.
+> Find a specified string in one or more files.
 
-- Find files by extension:
+- Find lines that contain a specified string:
 
-`find {{root_path}} -name '{{*.ext}}'`
+`find {{string}} {{path/to/file_or_directory}}`
 
-- Find files matching path pattern:
+- Display lines that do not contain the specified string:
 
-`find {{root_path}} -path '{{**/lib/**/*.ext}}'`
+`find {{string}} {{path/to/file_or_directory}} /v`
 
-- Run a command for each file, use {} within the command to access the filename:
+- Display the count of lines that contain the specified string:
 
-`find {{root_path}} -name '{{*.ext}}' -exec {{wc -l {} }}\;`
+`find {{string}} {{path/to/file_or_directory}} /c`
 
-- Find files modified in the last 24-hour period:
+- Display line numbers with the list of lines:
 
-`find {{root_path}} -mtime {{-1}}`
-
-- Find files using case insensitive name matching, of a certain size:
-
-`find {{root_path}} -size {{+500k}} -size {{-10MB}} -iname '{{*.TaR.gZ}}'`
-
-- Delete files by name, older than 180 days:
-
-`find {{root_path}} -name '{{*.ext}}' -mtime {{+180}} -delete`
-
-- Find files matching more than one search criteria:
-
-`find {{root_path}} -name '{{*.py}}' -or -name '{{*.r}}'`
-
-- Find files matching a given pattern, while excluding specific paths:
-
-`find {{root_path}} -name '{{*.py}}' -not -path '{{*/site-packages/*}}'`
+`find {{string}} {{path/to/file_or_directory}} /n`

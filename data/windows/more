@@ -1,19 +1,31 @@
 # more
 
-> Open a file for interactive reading, allowing scrolling and search (in forward direction only).
+> Display paginated output from stdin or a file.
 
-- Open a file:
+- Display paginated output from stdin:
 
-`more {{source_file}}`
+`{{echo test}} | more`
 
-- Page down:
+- Display paginated output from one or more files:
 
-`<Space>`
+`more {{path/to/file}}`
 
-- Search for a string (press `n` to go to the next match):
+- Convert tabs to the specified number of spaces:
 
-`/{{something}}`
+`more {{path/to/file}} /t{{spaces}}`
 
-- Exit:
+- Clear the screen before displaying the page:
 
-`q`
+`more {{path/to/file}} /c`
+
+- Display the output starting at line 5:
+
+`more {{path/to/file}} +{{5}}`
+
+- Enable extended interactive mode (see help for usage):
+
+`more {{path/to/file}} /e`
+
+- Display full usage information:
+
+`more /?`

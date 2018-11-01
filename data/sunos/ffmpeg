@@ -18,6 +18,10 @@
 
 `ffmpeg -ss {{mm:ss}} -i {{video.mp4}} -frames 1 -s {{128x128}} -f image2 {{image.png}}`
 
+- Trim a video from a given start time mm:ss to an end time mm2:ss2 (omit the -to flag to trim till the end):
+
+`ffmpeg -ss {{mm:ss}} -to {{mm2:ss2}} -i {{video.mp4}} -codec copy {{output.mp4}}`
+
 - Convert AVI video to MP4. AAC Audio @ 128kbit, h264 Video @ CRF 23:
 
 `ffmpeg -i {{input_video}}.avi -codec:audio aac -b:audio 128k -codec:video libx264 -crf 23 {{output_video}}.mp4`
