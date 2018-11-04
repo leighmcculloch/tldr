@@ -5,23 +5,19 @@ install: setup data generate
 	go install
 
 release: setup-release
-ifndef GITHUB_TOKEN
-  $(error GITHUB_TOKEN must be defined)
-endif
+	@: $(if ${GITHUB_TOKEN},,$(error GITHUB_TOKEN must be defined))
 	git tag -a $(VERSION) -m "$(VERSION)"
 	git push origin $(VERSION)
 	goreleaser --rm-dist --parallelism 1 || (git tag -d $(VERSION) && git push --delete origin $(VERSION))
 
 autorelease: install
-ifndef GITHUB_TOKEN
-  $(error GITHUB_TOKEN must be defined)
-endif
+	@: $(if ${GITHUB_TOKEN},,$(error GITHUB_TOKEN must be defined))
 	git add . && git diff --cached --exit-code || \
 		( \
 			echo 'New data files found, updating...' \
 			&& git commit -m "Update data files" \
 			&& git push origin master \
-			&& $(MAKE) release VERSION=v1.0.$$(date +%s)\
+			&& GITHUB_TOKEN="${GITHUB_TOKEN}" $(MAKE) release VERSION=v1.0.$$(date +%s)\
 		)
 
 data:
