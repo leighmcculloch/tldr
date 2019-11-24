@@ -1,23 +1,32 @@
 # mount
 
-> Provides access to an entire filesystem in one directory.
+> Mount Network File System (NFS) network shares.
+> More information: <https://docs.microsoft.com/windows-server/administration/windows-commands/mount>.
 
-- Show all mounted filesystems:
+- Mount a share to the "Z" drive letter:
 
-`mount`
+`mount \\{{computer_name}}\{{share_name}} {{Z:}}`
 
-- Mount a device to a directory:
+- Mount a share to the next available drive letter:
 
-`mount -t {{filesystem_type}} {{path/to/device_file}} {{path/to/target_directory}}`
+`mount \\{{computer_name}}\{{share_name}} *`
 
-- Mount a CD-ROM device (with the filetype ISO9660) to /cdrom (readonly):
+- Mount a share with a read timeout in seconds (defaults to 0.8, can be 0.9 or 1 to 60):
 
-`mount -t {{iso9660}} -o ro {{/dev/cdrom}} {{/cdrom}}`
+`mount -o timeout={{seconds}} \\{{computer_name}}\{{share_name}} {{Z:}}`
 
-- Mount all the filesystem defined in /etc/fstab:
+- Mount a share and retry up to 10 times if it fails:
 
-`mount -a`
+`mount -o retry={{retries}} \\{{computer_name}}\{{share_name}} {{Z:}}`
 
-- Mount a specific filesystem described in /etc/fstab (e.g. "/dev/sda1 /my_drive ext2 defaults 0 2"):
+- Mount a share with forced case sensitivity:
 
-`mount {{/my_drive}}`
+`mount -o casesensitive \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share as an anonymous user:
+
+`mount -o anon \\{{computer_name}}\{{share_name}} {{Z:}}`
+
+- Mount a share using a specific mount type:
+
+`mount -o mtype={{soft|hard}} \\{{computer_name}}\{{share_name}} {{Z:}}`
