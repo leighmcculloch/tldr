@@ -1,9 +1,0 @@
-language: go
-
-go_import_path: 4d63.com/tldr
-
-script:
-  - make install
-  - git add .
-  - git diff --cached --exit-code
-  - $GOPATH/bin/tldr curl

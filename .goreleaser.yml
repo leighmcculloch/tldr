@@ -4,10 +4,8 @@ builds:
       - linux
       - darwin
       - windows
-      - solaris
     goarch:
       - amd64
-      - 386
 
 archive:
   wrap_in_directory: true
@@ -24,12 +22,7 @@ archive:
     - LICENSE-tldr-pages
 
 brew:
-  github:
-    owner: leighmcculloch
-    name: homebrew-tldr
-  commit_author:
-    name: Leigh McCulloch
-    email: leigh@mcchouse.com
+  skip_upload: true
   folder: Formula
   homepage: "https://4d63.com/tldr"
   description: Simplified and community-driven man pages (tldr-pages).
