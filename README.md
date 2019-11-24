@@ -1,4 +1,8 @@
-# tldr
+<div align="center"><img alt="tldr" src="README-tldr.png" /></div>
+<p align="center">
+<a href="https://github.com/leighmcculloch/tldr/actions"><img alt="Build" src="https://github.com/leighmcculloch/tldr/workflows/build/badge.svg" /></a>
+<a href="https://goreportcard.com/report/github.com/leighmcculloch/tldr"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/leighmcculloch/tldr" /></a>
+</p>
 
 A single binary CLI containing the [tldr-pages](https://github.com/tldr-pages/tldr) collection of simplified and community-driven man pages.
 
