@@ -21,3 +21,16 @@ archives:
     files:
       - LICENSE
       - LICENSE-tldr-pages
+
+brews:
+  -
+    github:
+      owner: leighmcculloch
+      name: tldr
+    folder: Formula
+    homepage: "https://4d63.com/tldr"
+    description: Simplified and community-driven man pages (tldr-pages).
+    test: |
+      system "#{bin}/tldr -version"
+    install: |
+      bin.install "tldr"
