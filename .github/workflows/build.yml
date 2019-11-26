@@ -9,3 +9,4 @@ jobs:
           go-version: 1.13.x
       - uses: actions/checkout@v1
       - run: make build
+      - run: make generate build
