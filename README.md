@@ -22,6 +22,12 @@ To fulfill use cases not fulfilled by existing [tldr clients](https://github.com
 
 Download and install the binary from the [releases](https://github.com/leighmcculloch/tldr/releases) page.
 
+### Homebrew (Linux; macOS)
+
+```
+brew install 4d63/tldr/tldr
+```
+
 ### Source
 
 ```
