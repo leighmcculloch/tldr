@@ -1,5 +1,9 @@
 name: build
-on: [push, pull_request]
+on:
+  schedule:
+      - cron:  '0 12 * * *'
+  push:
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
