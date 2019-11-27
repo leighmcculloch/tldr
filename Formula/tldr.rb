@@ -2,16 +2,16 @@
 class Tldr < Formula
   desc "Simplified and community-driven man pages (tldr-pages)."
   homepage "https://4d63.com/tldr"
-  version "1.1.1"
+  version "1.1.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/leighmcculloch/tldr/releases/download/v1.1.1/tldr_1.1.1_macos_x64.tar.gz"
-    sha256 "245faa2aa2584c6df8e3ec8cd5cf653a013fa11ac87795f1a100d3a08e72e438"
+    url "https://github.com/leighmcculloch/tldr/releases/download/v1.1.2/tldr_1.1.2_macos_x64.tar.gz"
+    sha256 "0845e564d7eddc63c87b1ffb2d25e182ce370049918d7e3257b284a490127573"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/leighmcculloch/tldr/releases/download/v1.1.1/tldr_1.1.1_linux_x64.tar.gz"
-      sha256 "e58cdff38cd9c0b29cec1e90f013f8554111e4f2de5948198752386b93b28c99"
+      url "https://github.com/leighmcculloch/tldr/releases/download/v1.1.2/tldr_1.1.2_linux_x64.tar.gz"
+      sha256 "a48566794bad1949b43f80615a69743d4097a5d3b4950590a30f4fb386e34f4b"
     end
   end
 
