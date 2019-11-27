@@ -40,8 +40,11 @@ func main() {
 
 	raw, ok := files[command]
 	if !ok {
-		fmt.Fprintf(os.Stderr, "Command %s is not known.\n", command)
-		os.Exit(1)
+		raw, ok = commonFiles[command]
+		if !ok {
+			fmt.Fprintf(os.Stderr, "Command %s is not known.\n", command)
+			os.Exit(1)
+		}
 	}
 	text := string(raw)
 
